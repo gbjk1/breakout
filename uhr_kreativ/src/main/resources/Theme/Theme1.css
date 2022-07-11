@@ -1,0 +1,28 @@
+/* black & white */
+
+/* the normal ball/ circle     linear-gradient(#111111, #FFFFFF)*/
+.movBall{ -fx-fill: #EEEFFF; }
+
+/* the normal bar/ rectangle */
+.movBar{ -fx-fill: #EEEEEE; }
+
+.button{ -fx-fill: #EEEEEE; }
+
+.sceneLEFT{
+    -fx-background-color: #111111;
+
+}
+
+.sceneRIGHT { -fx-background-color: #111111; }
+
+.label{ -fx-text-fill: #EEEEEE; }
+
+/*
+* {
+-fx-margin: 10px !important;
+    -fx-padding: 10px !important;
+
+    }
+    */
+
+

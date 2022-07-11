@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="scene" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.breakout.ControllerScreens">
+    <ImageView fx:id="imageMain" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../../../Background/Breakout.png" />
+    </ImageView>
+     <Button fx:id="ButtonStart" layoutX="558.0" layoutY="276.0" mnemonicParsing="false" onAction="#switchToLevels" onMouseEntered="#changePictureMainScreen" onMouseExited="#changePictureMainScreen" opacity="0.0" prefHeight="52.0" prefWidth="175.0" />
+     <Button fx:id="ButtonEditor" layoutX="627.0" layoutY="338.0" mnemonicParsing="false" onAction="#switchToLevelEditor" onMouseEntered="#changePictureMainScreen" onMouseExited="#changePictureMainScreen" opacity="0.0" prefHeight="58.0" prefWidth="183.0" /> <!--fx:id="lvlEditBtn"-->
+     <Button fx:id="ButtonOptions" layoutX="496.0" layoutY="404.0" mnemonicParsing="false" onAction="#switchToSettings" onMouseEntered="#changePictureMainScreen" onMouseExited="#changePictureMainScreen" opacity="0.0" prefHeight="58.0" prefWidth="183.0" />
+     <Button fx:id="ButtonSecret" layoutX="1.0" layoutY="668.0" mnemonicParsing="false" onAction="#showClockScreen" onMouseEntered="#changePictureMainScreen" onMouseExited="#changePictureMainScreen" opacity="0.0" prefHeight="52.0" prefWidth="155.0" />
+</AnchorPane>

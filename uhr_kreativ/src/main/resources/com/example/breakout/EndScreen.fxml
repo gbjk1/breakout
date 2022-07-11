@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="500.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.breakout.ControllerScreens">
+   <children>
+      <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Background/EndScreen.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="againButton" layoutX="215.0" layoutY="114.0" mnemonicParsing="false" prefWidth="70.0" text="Erneut?" />
+      <Button fx:id="backButton" layoutX="215.0" layoutY="150.0" mnemonicParsing="false" prefWidth="70.0" text="Abfahrt!" />
+   </children>
+</AnchorPane>

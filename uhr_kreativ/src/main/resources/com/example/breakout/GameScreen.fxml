@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+
+<!-- Comments  -->
+<!-- Comments  -->
+<!-- Comments  -->
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.breakout.ControllerScreens">
+    <children>
+        <SplitPane dividerPositions="0.7" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+
+                <!--
+                This is the left side of the window "gameScreen"
+                In this Pane the game itself is shown e.g.: ball, bar, blocks
+                -->
+
+                <AnchorPane fx:id="scene" maxWidth="1000" minHeight="720.0" minWidth="1000.0" prefHeight="720.0" prefWidth="1000.0" styleClass="sceneLEFT" stylesheets="@../../../Theme/Theme1.css">
+
+                    <!--
+                    children are owned by the mother -> AnchorPane
+                    -->
+
+                    <children>
+                  <ImageView fitHeight="722.0" fitWidth="1014.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Background/LeftSide.png" />
+                     </image>
+                  </ImageView>
+                        <Circle fx:id="circle" layoutX="0" layoutY="0" radius="10.0" stroke="BLACK" strokeType="INSIDE" styleClass="movBall">
+
+                            <!--
+                            the circle is the ball (no shit...)
+                            <Rectangle fx:id="powerUp" height="30"  width="30" stroke="BLACK" strokeType="INSIDE" />
+                            -->
+
+                        </Circle>
+                        <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" height="10.0" layoutX="450.0" layoutY="700.0" stroke="BLACK" strokeType="INSIDE" styleClass="movBar" width="100" />
+
+                    </children>
+                </AnchorPane>
+
+                <AnchorPane maxWidth="280.0" minWidth="280.0" prefWidth="280.0" styleClass="sceneRIGHT" stylesheets="@../../../Theme/Theme1.css">
+
+                    <!--
+                    This is the right side of the window "gameScreen"
+                    In this Pane the game data is shown e.g.: Score, etc...
+                    -->
+
+                    <children>
+                  <ImageView fitHeight="722.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Background/RightSide.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageViewRightStrength" fitHeight="25.0" fitWidth="50.0" layoutX="90.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Number/Times1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageViewRightSpeed" fitHeight="25.0" fitWidth="50.0" layoutX="90.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Number/Times2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageViewRightBar" fitHeight="25.0" fitWidth="50.0" layoutX="90.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Number/Number100.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageViewRightBall" fitHeight="25.0" fitWidth="50.0" layoutX="90.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Number/Number10.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageViewRightBombs" fitHeight="25.0" fitWidth="50.0" layoutX="110.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Number/Times0.png" />
+                     </image>
+                  </ImageView>
+                        <HBox prefHeight="720.0" prefWidth="280.0">
+                            <children>
+                                <VBox fx:id="imageViewRight1" prefWidth="280.0">
+
+                                    <!--
+                                    VBox splits vertically
+                                    HBox splits horizontally
+                                    -->
+
+                                    <padding>
+
+                                        <!--
+                                        Padding -> so that it buttons, etc... are not
+                                        beginning on the window border. there is a little
+                                        space in between (looks better)
+                                        -->
+
+                                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                    </padding>
+                                    <children>
+                                        <HBox prefHeight="40.0">
+                                            <children>
+                                                <Region HBox.hgrow="ALWAYS" />
+
+                                                <!--
+                                                HBox.grow is there so that the label on the left
+                                                and on the right are always pushed to the most left
+                                                and most right (dynamically cause timer increases by time
+                                                and fixed values would do no good)
+                                                -->
+
+                                                <Label fx:id="highScore" prefHeight="40.0" />
+                                                <Label minHeight="40.0" minWidth="17.0" prefHeight="40.0" prefWidth="17.0" text="sec" />
+                                            </children>
+                                        </HBox>
+
+                                        <!--
+                                       VBox splits vertically
+                                       HBox splits horizontally
+                                       -->
+
+                                        <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                        <Button fx:id="back" mnemonicParsing="false" onAction="#switchToLevels" prefWidth="300.0" style="-fx-background-color: #f0f0f0f0;" text="Zurück zur Levelauswahl" />
+
+                                        <!--
+                                        fx:id are used to give them a value
+                                        onAction means if the button is pressed
+                                        the methode called "SwitchToLevels" is
+                                        called
+                                        -->
+
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
